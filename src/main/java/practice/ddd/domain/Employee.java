@@ -1,9 +1,12 @@
 package practice.ddd.domain;
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+
 import java.util.Objects;
 
 @Entity
+@EqualsAndHashCode
 public class Employee {
 
     @EmbeddedId
@@ -44,16 +47,16 @@ public class Employee {
         return team;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return Objects.equals(id, employee.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Employee employee = (Employee) o;
+//        return Objects.equals(id, employee.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id);
+//    }
 }
